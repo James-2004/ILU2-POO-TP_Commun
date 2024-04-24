@@ -9,6 +9,7 @@ class FormulaireRestaurantTest {
 	static FormulaireRestaurant formulaire;
 	static final int NB_PERSONNES = 3;
 	static final int NUM_SERVICE = 2;
+	static final int NUM_TABLE = 2;
 	static final int JOUR = 10;
 	static final int MOIS = 12;
 	static final int IDENTIFICATION_1 = 0;
@@ -16,7 +17,7 @@ class FormulaireRestaurantTest {
 
 	@BeforeAll
 	static void setUpBeforeClass() {
-		formulaire = new FormulaireRestaurant(JOUR, MOIS, NB_PERSONNES, NUM_SERVICE);
+		formulaire = new FormulaireRestaurant(JOUR, MOIS, NUM_TABLE, NB_PERSONNES, NUM_SERVICE);
 	}
 
 	@Test
@@ -32,7 +33,7 @@ class FormulaireRestaurantTest {
 
 	@Test
 	void testGetNumService() {
-		assertEquals(NUM_SERVICE, formulaire.getNumService(), "Le numéro de service devrait être " + NUM_SERVICE);
+		assertEquals(NUM_SERVICE, formulaire.getNumeroService(), "Le numéro de service devrait être " + NUM_SERVICE);
 	}
 
 	@Test
@@ -47,17 +48,17 @@ class FormulaireRestaurantTest {
 
 	@Test
 	void setIdentificationEntite() {
-		FormulaireRestaurant formulaire2 = new FormulaireRestaurant(JOUR, MOIS, NB_PERSONNES, NUM_SERVICE);
-		assertEquals(IDENTIFICATION_1, formulaire2.getIdentificationEntite(),
+		FormulaireRestaurant formulaire2 = new FormulaireRestaurant(JOUR, MOIS, NUM_TABLE, NB_PERSONNES, NUM_SERVICE);
+		assertEquals(IDENTIFICATION_1, formulaire2.getNumeroEntite(),
 				"L'identification du formulaire devrait être " + IDENTIFICATION_1);
-		formulaire2.setIdentificationEntite(IDENTIFICATION_2);
-		assertEquals(IDENTIFICATION_2, formulaire2.getIdentificationEntite(),
+		formulaire2.setNumeroEntite(IDENTIFICATION_2);
+		assertEquals(IDENTIFICATION_2, formulaire2.getNumeroEntite(),
 				"L'identification du formulaire devrait être " + IDENTIFICATION_2);
 	}
 
 	@Test
 	void getIdentificationEntite() {
-		assertEquals(IDENTIFICATION_1, formulaire.getIdentificationEntite(),
+		assertEquals(IDENTIFICATION_1, formulaire.getNumeroEntite(),
 				"L'identification du formulaire devrait être " + IDENTIFICATION_1);
 	}
 

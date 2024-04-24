@@ -19,7 +19,7 @@ class RestaurantTest {
 		restaurant.ajouterTable(5);
 		restaurant.ajouterTable(5);
 		restaurant.ajouterTable(8);
-		formulaire = new FormulaireRestaurant(10, 12, 3, 1);
+		formulaire = new FormulaireRestaurant(10, 12, 3, 1, 1);
 	}
 
 	@Test
