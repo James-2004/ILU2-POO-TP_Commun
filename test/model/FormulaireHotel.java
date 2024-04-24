@@ -5,7 +5,7 @@ public class FormulaireHotel extends Formulaire {
     private int nbLitDouble;
 
     public FormulaireHotel(int jour, int mois, int numeroChambre, int nbLitSimple, int nbLitDouble) {
-        super(jour, mois, numeroChambre);
+        super(jour, mois, numeroChambre, nbLitDouble);
         this.nbLitSimple = nbLitSimple;
         this.nbLitDouble = nbLitDouble;
     }

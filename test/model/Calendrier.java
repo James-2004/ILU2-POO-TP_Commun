@@ -41,22 +41,21 @@ public class Calendrier {
             }
         }
 
-        public boolean estLibre(int jour) {
+        public boolean estLibre(int jour)  {
             return jours[jour - 1];
         }
 
         public boolean reserver(int jour) {
-            if (!estLibre(jour)) {
-                throw new IllegalStateException("Ce jour est déjà réservé.");
+            if (estLibre(jour)) {
+                jours[jour - 1] = false;
+                return true;
+            } else {
+                return false;
             }
-            jours[jour - 1] = true;
-            return true;
         }
+
     }
 }
 
- //   if (!estLibre(jour)) {
- //       return false; // false si deja reserver
- //   }
 
 

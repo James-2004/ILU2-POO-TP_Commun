@@ -4,7 +4,7 @@ public class FormulaireSpectacle extends Formulaire {
     private int numeroZone;
 
     public FormulaireSpectacle(int jour, int mois, int numeroPlace, int numeroZone) {
-        super(jour, mois, numeroPlace);
+        super(jour, mois, numeroPlace, numeroZone);
         this.numeroZone = numeroZone;
     }
 

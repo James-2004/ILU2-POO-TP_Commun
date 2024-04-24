@@ -9,7 +9,7 @@ public class Restaurant {
 
     public void ajouterTable(int nombreChaises) {
         int numeroTable = centraleReservation.ajouterEntite(new Table(nombreChaises));
-        System.out.println("Table ajoutÃ©e avec succÃ¨s. NumÃ©ro de la table : " + numeroTable);
+        System.out.println("Table ajoutée avec succès. Numéro de la table : " + numeroTable);
     }
 
     public int[] donnerPossibilites(FormulaireRestaurant formulaire) {
@@ -28,12 +28,13 @@ public class Restaurant {
         if (table != null) {
             return table.reserver(formulaire);
         } else {
-            System.out.println("La table numÃ©ro " + numeroTable + " n'existe pas.");
+            System.out.println("La table numéro " + numeroTable + " n'existe pas.");
             return null;
         }
     }
 
     private class Table extends EntiteReservable {
+        private int numero;
         private int nombreChaises;
         private boolean[] disponibilites;
 
@@ -43,9 +44,13 @@ public class Restaurant {
             this.disponibilites = new boolean[31]; // 31 jours dans un mois
         }
 
+        public int getNumero() {
+            return numero;
+        }
+
         @Override
         public boolean estLibre(int jour, int mois) {
-            return disponibilites[jour - 1];
+            return !disponibilites[jour - 1];
         }
 
         @Override
@@ -60,8 +65,9 @@ public class Restaurant {
             int jour = formulaireRestaurant.getJour();
 
             if (estLibre(jour, formulaire.getMois()) && compatible(formulaire)) {
-                disponibilites[jour - 1] = true; // Marquer la table comme rÃ©servÃ©e
-                return new ReservationRestaurant(jour, formulaireRestaurant.getMois(), getNumero(), formulaireRestaurant.getNumeroService());
+                disponibilites[jour - 1] = true; // Marquer la table comme réservée
+                this.numero = getNumero(); // Mettre à jour le numéro de la table
+                return new ReservationRestaurant(jour, formulaireRestaurant.getMois(), this.numero, formulaireRestaurant.getNumeroService());
             } else {
                 return null;
             }

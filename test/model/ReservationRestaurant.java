@@ -12,7 +12,7 @@ public class ReservationRestaurant extends Reservation {
 
     @Override
     public String toString() {
-        return "Le " + jour + "/" + mois + "\nTable " + numeroTable + " pour le " + ((numeroService == 1) ? "premier" : "deuxiÃ¨me") + " service.";
+        return "Le " + jour + "/" + mois + "\nTable " + numeroTable + " pour le " + ((numeroService == 1) ? "premier" : "deuxième") + " service.";
     }
 
     // Classe interne ReservationHotel
@@ -30,7 +30,7 @@ public class ReservationRestaurant extends Reservation {
 
         @Override
         public String toString() {
-            return "Le " + jour + "/" + mois + "\nChambre nÂ°" + numeroChambre + " avec " + nbLitSimple + " lit(s) simple(s) et " + nbLitDouble + " lit(s) double(s).";
+            return "Le " + jour + "/" + mois + "\nChambre n°" + numeroChambre + " avec " + nbLitSimple + " lit(s) simple(s) et " + nbLitDouble + " lit(s) double(s).";
         }
     }
 
@@ -47,7 +47,7 @@ public class ReservationRestaurant extends Reservation {
 
         @Override
         public String toString() {
-            return "Le " + jour + "/" + mois + "\nPlace dans la zone nÂ°" + numeroZone + ", chaise nÂ°" + numeroChaise + ".";
+            return "Le " + jour + "/" + mois + "\nPlace dans la zone n°" + numeroZone + ", chaise n°" + numeroChaise + ".";
         }
     }
 }
