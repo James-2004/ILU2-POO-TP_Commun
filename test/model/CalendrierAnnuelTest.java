@@ -1,16 +1,16 @@
 package model;
-
+import model.Calendrier;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 class CalendrierAnnuelTest {
-	static CalendrierAnnuel calendrier;
+	static Calendrier calendrier;
 	
 	@BeforeAll
 	static void setUpBeforeClass() {
-		calendrier = new CalendrierAnnuel();
+		calendrier = new Calendrier();
 	}
 
 	@Test
